@@ -14,8 +14,9 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		// allow health url check without auth
 		http.csrf(csrf -> csrf.disable()).cors(cors -> cors.disable())
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/**").authenticated())
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/health").permitAll().anyRequest().authenticated())
 				.formLogin(login -> login.defaultSuccessUrl("/home", true).permitAll())
 				.logout(logout -> logout.permitAll());
 		return http.build();
