@@ -1,2 +1,2 @@
 # 3DLensSim
-3d lens simulator
+3d lens simulator - WIP

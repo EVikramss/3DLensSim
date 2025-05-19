@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Debug</title>
+</head>
+<body ng-app="Debug" ng-controller="debug">
+
+	<form id="inputForm" action="./debug" method="post">
+		<div class="form-group">
+			<label for="x">X Position:</label> <input type="text" id="x" name="x"
+				value="-1.0"> <label for="y">Y Position:</label> <input
+				type="text" id="y" name="y" value="-1.565"> <label for="z">Z
+				Position:</label> <input type="text" id="z" name="z" value="0.0">
+		</div>
+		<div class="form-group">
+			<label for="xdir">X Direction:</label> <input type="text" id="xdir"
+				name="xdir" value="0.0"> <label for="ydir">Y
+				Direction:</label> <input type="text" id="ydir" name="ydir" value="0.0">
+				<label for="zdir">Z Direction:</label> <input type="text" id="zdir"
+				name="zdir" value="1.0">
+		</div>
+		<div class="form-group">
+			<label for="wavelength">Wavelength:</label> <input type="text"
+				id="wavelength" name="wavelength" value="700.0">
+			<label for="color">Color:</label> <input type="text" id="color"
+				name="color" value="1.0">
+				<label for="intensity">Intensity:</label> <input type="text"
+				id="intensity" name="intensity" value="1.0">
+		</div>
+		<div class="form-group">
+			<button type="submit">Debug</button>
+		</div>
+	</form>
+	<p>-------------------------------------------------------------------------------------</p>
+	
+	<script type="text/javascript" src="./lib/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="./lib/threejs/three.min.js"></script>
+	<script type="text/javascript" src="./lib/threejs/OrbitControls.js"></script>
+	<script type="text/javascript" src="./js/debug.js"></script>
+</body>
+</html>

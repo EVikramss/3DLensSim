@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lens Simulation</title>
+
+<style>
+.demarcation {
+	margin: 20px 0;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+}
+
+.object-details {
+	margin-top: 20px;
+}
+</style>
+</head>
+<body ng-app="LensSim" ng-controller="home">
+
+	<div class="container">
+		<button class="btn btn-primary" ng-click="solve()">Solve</button>
+		<label>{{ solve.result }}</label>
+
+		<div class="demarcation"></div>
+		<div>
+			<h3>Sampling Properties</h3>
+			<ul class="list-group">
+				<!-- <li class="list-group-item" ng-repeat="object in objects"
+					ng-click="selectObject(object)">{{ object.name }}</li> -->
+			</ul>
+		</div>
+		<div class="demarcation"></div>
+
+		<div>
+			<h3>Objects</h3>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="object in selectableObjects"
+					ng-click="selectObject(object)">{{ object.name }}</li>
+			</ul>
+		</div>
+
+		<div class="object-details" ng-if="selectedObject">
+			<h3>Object Details</h3>
+			<p>
+				<strong>Name:</strong> {{ selectedObject.name }}
+			</p>
+			<p>
+				<strong>Description:</strong> {{ selectedObject.description }}
+			</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./lib/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="./lib/threejs/three.min.js"></script>
+	<script type="text/javascript" src="./lib/threejs/OrbitControls.js"></script>
+	<script type="text/javascript" src="./lib/threejs/DragControls.js"></script>
+	<script type="text/javascript" src="./lib/threejs/transformcontrols.js"></script>
+	<script type="text/javascript" src="./lib/bootstrap/bootstrap.min.css"></script>
+	<script type="text/javascript"
+		src="./lib/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+	<!-- <script
+		src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script> -->
+	<script type="text/javascript" src="./js/scene/setupScene.js"></script>
+	<script type="text/javascript" src="./js/scene/setupAxisAndGrid.js"></script>
+	<script type="text/javascript" src="./js/scene/setupControls.js"></script>
+	<script type="text/javascript" src="./js/scene/drawHelper.js"></script>
+	<script type="text/javascript" src="./js/scene/setupObjectSelection.js"></script>
+	<script type="text/javascript" src="./js/scene/setupDragControls.js"></script>
+	<script type="text/javascript" src="./js/scene/data/getLensSetup.js"></script>
+	<script type="text/javascript" src="./js/scene/data/getRayData.js"></script>
+	<script type="text/javascript"
+		src="./js/scene/data/getGeneratedImage.js"></script>
+	<script type="text/javascript" src="./js/scene/draw/drawAperture.js"></script>
+	<script type="text/javascript" src="./js/scene/draw/drawLens.js"></script>
+	<script type="text/javascript" src="./js/menu/menu.js"></script>
+	<script type="text/javascript" src="./js/home.js"></script>
+</body>
+</html>
